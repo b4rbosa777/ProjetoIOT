@@ -28,50 +28,7 @@ namespace Estufa.Controllers
             return await _context.Lampada.ToListAsync();
         }
 
-        // GET: api/Lampada/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Lampada>> GetLampada(int id)
-        {
-            var lampada = await _context.Lampada.FindAsync(id);
-
-            if (lampada == null)
-            {
-                return NotFound();
-            }
-
-            return lampada;
-        }
-
-        // PUT: api/Lampada/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutLampada(int id, Lampada lampada)
-        {
-            if (id != lampada.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(lampada).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!LampadaExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
+        
 
         // POST: api/Lampada
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

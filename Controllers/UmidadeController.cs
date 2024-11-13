@@ -28,51 +28,9 @@ namespace Estufa.Controllers
             return await _context.Umidade.ToListAsync();
         }
 
-        // GET: api/Umidade/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Umidade>> GetUmidade(int id)
-        {
-            var umidade = await _context.Umidade.FindAsync(id);
+        
 
-            if (umidade == null)
-            {
-                return NotFound();
-            }
-
-            return umidade;
-        }
-
-        // PUT: api/Umidade/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutUmidade(int id, Umidade umidade)
-        {
-            if (id != umidade.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(umidade).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UmidadeExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
+       
         // POST: api/Umidade
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]

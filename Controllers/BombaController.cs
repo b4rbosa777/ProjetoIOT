@@ -28,50 +28,7 @@ namespace Estufa.Controllers
             return await _context.Bomba.ToListAsync();
         }
 
-        // GET: api/Bomba/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Bomba>> GetBomba(int id)
-        {
-            var bomba = await _context.Bomba.FindAsync(id);
-
-            if (bomba == null)
-            {
-                return NotFound();
-            }
-
-            return bomba;
-        }
-
-        // PUT: api/Bomba/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutBomba(int id, Bomba bomba)
-        {
-            if (id != bomba.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(bomba).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!BombaExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
+        
 
         // POST: api/Bomba
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

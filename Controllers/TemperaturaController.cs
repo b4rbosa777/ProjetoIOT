@@ -28,50 +28,7 @@ namespace Estufa.Controllers
             return await _context.Temperatura.ToListAsync();
         }
 
-        // GET: api/Temperatura/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Temperatura>> GetTemperatura(int id)
-        {
-            var temperatura = await _context.Temperatura.FindAsync(id);
-
-            if (temperatura == null)
-            {
-                return NotFound();
-            }
-
-            return temperatura;
-        }
-
-        // PUT: api/Temperatura/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutTemperatura(int id, Temperatura temperatura)
-        {
-            if (id != temperatura.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(temperatura).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TemperaturaExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
+        
 
         // POST: api/Temperatura
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

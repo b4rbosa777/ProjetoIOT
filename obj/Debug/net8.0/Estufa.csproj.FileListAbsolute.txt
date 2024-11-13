@@ -281,3 +281,4 @@ C:\ProjetoIOT\Estufa\obj\Debug\net8.0\refint\Estufa.dll
 C:\ProjetoIOT\Estufa\obj\Debug\net8.0\Estufa.pdb
 C:\ProjetoIOT\Estufa\obj\Debug\net8.0\Estufa.genruntimeconfig.cache
 C:\ProjetoIOT\Estufa\obj\Debug\net8.0\ref\Estufa.dll
+C:\ProjetoIOT\Estufa\obj\Debug\net8.0\Estufa.sourcelink.json
